@@ -34,7 +34,7 @@ function Dashboard() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this lead?")) {
       try {
-        await axios.delete(`${import.meta.env.VITE_API_URL}/api/deleads/${id}`);
+        await axios.delete(`/api/data/api/deleads/${id}`);
         window.location.reload();
         setLeads(leads.filter((lead) => lead._id !== id));
 
@@ -60,7 +60,7 @@ function Dashboard() {
   const handleSaveUpdate = async () => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/api/upleads/${selectedLead._id}`,
+        `/api/data/api/upleads/${selectedLead._id}`,
         editForm,
       );
       window.location.reload();
@@ -79,7 +79,7 @@ function Dashboard() {
     const fetchLeads = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/getleads`,
+          `/api/data/api/getleads`,
         );
         setLeads(response.data);
       } catch (error) {

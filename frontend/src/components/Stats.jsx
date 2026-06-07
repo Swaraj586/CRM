@@ -7,7 +7,7 @@ function Stats() {
     const fetchLeads = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/getleads`,
+          `/api/data/api/getleads`,
         );
         setLeads(response.data);
       } catch (error) {

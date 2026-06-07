@@ -54,7 +54,7 @@ function Create() {
   const handleSave = async () => {
     if (!validateForm()) return;
     const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/addleads`,
+      `/api/data/api/addleads`,
       formData,
     );
     setIsCreating(false);
