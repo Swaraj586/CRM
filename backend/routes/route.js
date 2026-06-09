@@ -9,5 +9,8 @@ router.get('/getleads', getLead);
 router.post('/addleads', addLead);
 router.delete('/deleads/:id', delLead);
 router.put('/upleads/:id', updateLead);
+router.get('/test', (req, res) => {
+    res.send('API is working');
+});
 
 export default router;
